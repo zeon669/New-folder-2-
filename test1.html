@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobangebote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .job {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .job h2 {
+            margin-top: 0;
+        }
+
+        .job p {
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jobangebote</h1>
+    </header>
+
+    <div class="container">
+        <div class="job">
+            <h2>Webentwickler</h2>
+            <p>blablabla GmbH</p>
+            <p>Ort : Berlin</p>
+            <p>blablabla Unternehmen sucht eine Webentwickler</p>
+            <button class="btn" onclick="openModal()">Bewerben</button>
+        </div>
+
+        <div class="job">
+            <h2>Projekt Entwickler</h2>
+            <p>blablabla GmbH</p>
+            <p>Ort : Frankfurt</p>
+            <p>blablabla Unternehmen sucht eine Projektentwickler</p>
+            <button class="btn" onclick="openModal()">Bewerben</button>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Eingabe Formular</h2>
+            <form>
+                <label for="name">Name Nachname:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">E-Mail:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Nachricht:</label><br>
+                <textarea id="message" name="message" required></textarea><br>
+                <button type="submit" class="btn" onclick="apply()">Senden</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+        window.onload = function() {
+            closeModal();
+        }
+        function apply() {
+            alert("Ihre Eingabe wurde akzeptiert");
+        }
+    </script>
+</body>
+</html>
